@@ -14,9 +14,9 @@ function App() {
    <BrowserRouter>
    {/* <Sidenav/> */}
     <Routes>
-    <Route path="/" exact element = {<Home/>} />
-    <Route path="about" exact element={<About/>} />
-    <Route path="setting" eact element={<Setting/>} />
+    <Route path="/Material-UI-Dashboard" exact element = {<Home/>} />
+    <Route path="/about" exact element={<About/>} />
+    <Route path="/setting" eact element={<Setting/>} />
     </Routes>
    </BrowserRouter> 
     </>
