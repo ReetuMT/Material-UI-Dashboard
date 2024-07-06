@@ -1,3 +1,4 @@
+import { colors } from "@mui/material";
 import React from "react";
 import { Chart } from "react-google-charts";
 
@@ -14,6 +15,7 @@ export const options = {
     title: "Company Performance",
     subtitle: "Sales, Expenses, and Profit: 2014-2017",
   },
+  colors:["rgb(53,138,148)","rgb(37,11,165)","#188310"]
 };
 
 export function BarCharts() {
@@ -21,7 +23,7 @@ export function BarCharts() {
     <Chart
       chartType="Bar"
       width="100%"
-      height="400px"
+      height="350px"
       data={data}
       options={options}
     />

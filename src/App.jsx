@@ -5,6 +5,7 @@ import Sidenav from "./Component/Sidenav"
 import Home from "./Page/Home"
 import About from "./Page/About"
 import Setting from "./Page/Setting"
+import Analytics from "./Page/Analytics"
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
     <Route path="/Material-UI-Dashboard" exact element = {<Home/>} />
     <Route path="/about" exact element={<About/>} />
     <Route path="/setting" eact element={<Setting/>} />
+    <Route path="/analytics" eact element={<Analytics/>} />
     </Routes>
    </BrowserRouter> 
     </>
