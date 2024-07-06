@@ -15,6 +15,10 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../AppStore';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import HomeIcon from '@mui/icons-material/Home';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
+import SettingsIcon from '@mui/icons-material/Settings';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -82,7 +86,7 @@ export default function Sidenav() {
         </DrawerHeader>
         <Divider />
         <List>
-        <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>{navigate("/")}}>
+        <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>{navigate("/Material-UI-Dashboard")}}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -97,7 +101,7 @@ export default function Sidenav() {
                     justifyContent: 'center',
                   }}
                 >
-                 <InboxIcon />
+                <HomeIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
@@ -117,9 +121,9 @@ export default function Sidenav() {
                     justifyContent: 'center',
                   }}
                 >
-                 <InboxIcon />
+                 <ShoppingCartIcon/>
                 </ListItemIcon>
-                <ListItemText primary="About" sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary="Product" sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('/analytics')}}>
@@ -137,7 +141,7 @@ export default function Sidenav() {
                     justifyContent: 'center',
                   }}
                 >
-                 <InboxIcon />
+                 <AnalyticsIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Anaytics" sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
@@ -157,7 +161,7 @@ export default function Sidenav() {
                     justifyContent: 'center',
                   }}
                 >
-                 <InboxIcon />
+                 <SettingsIcon/>
                 </ListItemIcon>
                 <ListItemText primary="Setting" sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>

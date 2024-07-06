@@ -182,7 +182,7 @@ export default function Navbar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            MUI Chart
           </Typography>
           <Search>
             <SearchIconWrapper>

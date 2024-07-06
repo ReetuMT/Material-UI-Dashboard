@@ -13,7 +13,7 @@ import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import AccordianDash from '../Component/AccordianDash';
 import { BarCharts } from '../Charts/BarCharts';
-
+import CountUp from 'react-countup';
 function Home() {
     return (
         <>
@@ -32,7 +32,7 @@ function Home() {
                                                 <CreditCardIcon />
                                             </div>
                                             <Typography gutterBottom variant="h5" component="div" style={{ color: 'aliceblue' }}>
-                                                $500.00
+                                           $<CountUp delay={0.6} end={500} duration={0.6}/>
                                             </Typography>
                                             <Typography gutterBottom variant="body2" component="div" sx={{ color: "#ccd1d1" }}>
                                                 Total Earning
@@ -45,7 +45,7 @@ function Home() {
                                                 <ShoppingBagIcon />
                                             </div>
                                             <Typography gutterBottom variant="h6" component="div" style={{ color: 'aliceblue' }}>
-                                                $910.00
+                                            $<CountUp delay={0.6} end={910} duration={0.6}/>
                                             </Typography>
                                             <Typography gutterBottom variant="body2" component="div" sx={{ color: "#ccd1d1" }}>
                                                 Total Order
