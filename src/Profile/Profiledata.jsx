@@ -37,9 +37,8 @@ export default function Profiledata() {
         <ListItemIcon>
           <PhoneAndroidIcon/>
         </ListItemIcon>
-        <ListItemText primary="(+91) 8095513469" />
+        <ListItemText primary="(+91) *******69" />
       </ListItemButton>
-      
     </List>
   );
 }

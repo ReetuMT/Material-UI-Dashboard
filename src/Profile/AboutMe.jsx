@@ -3,14 +3,14 @@ import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 
 const rows = [
-  { id: 1, About: "Reetu", Details: "Full Name : Reetu M Tambre " },
-  { id: 2, About: " ", Details: "Father Name : Malatesh M Tambre " },
-  { id: 23, About: " ", Details: "Mother Name : Renu M Tambre " },
+  { id: 1, About: "Full Name :", Details: "Reetu M Tambre " },
+  { id: 2, About: "Father Name :", Details: "Malatesh M Tambre " },
+  { id: 23, About: "Mother Name :", Details: "Renu M Tambre " },
 ];
 
 const columns = [
   { field: 'About', headerName: 'About', width: 150 },
-  { field: 'Details', headerName: 'Details', width: 585 },
+  { field: 'Details', headerName: 'Details', width: 150 },
 ];
 
 export default function AboutMe() {
