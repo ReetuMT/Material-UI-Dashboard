@@ -6,19 +6,24 @@ import { useNavigate } from 'react-router-dom';
 import { Input } from '@mui/material';
 
 export default function AddProduct() {
-  const navigate = useNavigate('');
-  const [img, setImaage] = React.useState()
-  function handleimageChange(file) {
-    console.log(file);
-    // setImaage(file)
-  }
+  const navigate = useNavigate();
+  const [imgBase64, setImgBase64] = React.useState(null);
   const [errors, setErrors] = React.useState({});
   const [formData, setFormData] = React.useState({
     title: '',
     description: '',
     category: '',
-    price: ''
+    price: '',
+    image: ''
   });
+
+  function handleImageChange(file) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImgBase64(reader.result);
+    };
+    reader.readAsDataURL(file);
+  }
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -39,13 +44,15 @@ export default function AddProduct() {
       return;
     }
 
+    const payload = { ...formData, image: imgBase64 };
+
     try {
       const response = await fetch("http://localhost:3000/product", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
 
       if (response.ok) {
@@ -118,14 +125,13 @@ export default function AddProduct() {
               error={!!errors.price}
               helperText={errors.price}
             />
-
-
           </div>
-          <Input type='file' name='file' onInput={(e) => { handleimageChange(e.target.files) }} />
+          <Input type='file' name='file' onInput={(e) => { handleImageChange(e.target.files[0]) }} />
+          {imgBase64 && <img src={imgBase64} alt="Preview" />}
           <Button type="submit" variant="contained" style={{ marginLeft: 10, marginTop: 10 }}>
             Add
           </Button>
-          <Button type="cancel" variant="outlined" style={{ marginLeft: 10, marginTop: 10 }} onClick={() => navigate("/about")}>
+          <Button type="button" variant="outlined" style={{ marginLeft: 10, marginTop: 10 }} onClick={() => navigate("/about")}>
             Cancel
           </Button>
         </Box>
