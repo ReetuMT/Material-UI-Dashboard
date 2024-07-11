@@ -17,12 +17,12 @@ import CountUp from 'react-countup';
 function Home() {
     return (
         <>
-            <div className="bgcolor">
+            <div className="bgcolor" >
                 <Navbar />
                 <Box height={70} />
-                <Box sx={{ display: 'flex' }}>
+                <Box sx={{ display: 'flex'}}>
                     <Sidenav />
-                    <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                    <Box component="main" sx={{ flexGrow: 1 }}>
                         <Grid container spacing={2}>
                             <Grid item xs={8}>
                                 <Stack spacing={2} direction="row">
